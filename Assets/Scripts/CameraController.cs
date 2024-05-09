@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
     public Transform _transform;
     public Transform cameraTransform;
 
+    public VariableJoystick variableJoystick; //modificacao joystic
+
     Vector2 rotacaoMouse;
     public int sensibilidade;
 
@@ -28,10 +30,11 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        Vector2 controleMouse = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 controleMouse = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
         rotacaoMouse = new Vector2(rotacaoMouse.x + controleMouse.x * sensibilidade * Time.deltaTime, rotacaoMouse.y + controleMouse.y * sensibilidade * Time.deltaTime);
         _transform.eulerAngles = new Vector3(_transform.eulerAngles.x, rotacaoMouse.x, _transform.eulerAngles.z);
         rotacaoMouse.y = Mathf.Clamp(rotacaoMouse.y, -80, 80);
+
 
         cameraTransform.localEulerAngles = new Vector3(-rotacaoMouse.y, cameraTransform.localEulerAngles.y, cameraTransform.localEulerAngles.z);
 
