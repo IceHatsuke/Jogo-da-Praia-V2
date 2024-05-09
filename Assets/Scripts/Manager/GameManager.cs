@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
   public int moeda = 0;
   public int score = 0;
   public int lixoColetado = 0;
+  public bool glove = false;
+  public bool mao = true;
+  public GameObject hand;
   public TextMeshProUGUI lixoText;
   public TextMeshProUGUI moedaText;
   void Awake()
@@ -24,5 +28,6 @@ public class GameManager : MonoBehaviour
   {
     lixoText.text = lixoColetado.ToString();
     moedaText.text = moeda.ToString();
+    hand.SetActive(mao);
   }
 }

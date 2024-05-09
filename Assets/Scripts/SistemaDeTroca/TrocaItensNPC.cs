@@ -23,5 +23,12 @@ public class TrocaItensNPC : MonoBehaviour
             GameManager.gameManager.aspiradorHand = true;
         }
     }
+    public void Trocar10MoedasPorLuva()
+    {
+        if(GameManager.gameManager.moeda >= 10)
+        {
+            GameManager.gameManager.glove = true;
+        }
+    }
 
 }

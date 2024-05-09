@@ -8,6 +8,7 @@ public class HandAnimator : MonoBehaviour
     public Animator animator;
     public string maos1;
     public string maos2;
+    public GameObject glove;
     public static bool grabOn = false;
      public Collider AreaDetectao;
 
@@ -32,6 +33,11 @@ public class HandAnimator : MonoBehaviour
             animator.SetBool("grabOn", false);
 
         }
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            animator.SetBool("glove", GameManager.gameManager.glove);
+
+        }
 
         
 
@@ -43,6 +49,15 @@ public class HandAnimator : MonoBehaviour
     public void DisableCollider()
     {
         AreaDetectao.enabled = false;
+    }
+    public void DisableHand()
+    {
+      GameManager.gameManager.mao = false;
+    }
+    public void EnabledHand()
+    {
+        Debug.Log("MaoLuva");
+        glove.SetActive(true);
     }
 
 }
