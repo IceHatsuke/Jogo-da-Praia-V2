@@ -20,6 +20,7 @@ public class TrocaItensNPC : MonoBehaviour
     {
         if(GameManager.gameManager.moeda >= 20)
         {
+            GameManager.gameManager.moeda -= 20;
             GameManager.gameManager.aspiradorHand = true;
         }
     }
@@ -27,6 +28,7 @@ public class TrocaItensNPC : MonoBehaviour
     {
         if(GameManager.gameManager.moeda >= 10)
         {
+             GameManager.gameManager.moeda -= 10;
             GameManager.gameManager.glove = true;
         }
     }

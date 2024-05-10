@@ -1561,9 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 128685771}
-  maos1: 
-  maos2: 
-  glove: {fileID: 0}
+  glove: {fileID: 128685768}
   AreaDetectao: {fileID: 327195385}
 --- !u!95 &128685771
 Animator:
@@ -9847,6 +9845,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 409460, guid: 83e00ee61e401534699048e56c0a1bc9, type: 3}
   m_PrefabInstance: {fileID: 584266656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &513731517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513731518}
+  m_Layer: 5
+  m_Name: ScoreText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &513731518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513731517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 668223800}
+  - {fileID: 1528378210}
+  m_Father: {fileID: 2079289569}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 859, y: -393}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &514687866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13871,17 +13906,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668223799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 75675972}
-  m_Father: {fileID: 2079289569}
+  m_Father: {fileID: 513731518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -665.6981, y: 356.62952}
+  m_AnchoredPosition: {x: -1524.6981, y: 749.6295}
   m_SizeDelta: {x: 375, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668223801
@@ -15661,7 +15696,7 @@ GameObject:
   - component: {fileID: 741419865}
   m_Layer: 0
   m_Name: Maos1
-  m_TagString: Untagged
+  m_TagString: Mao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15770,8 +15805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 741419863}
-  maos1: 
-  maos2: 
   glove: {fileID: 128685768}
   AreaDetectao: {fileID: 327195385}
 --- !u!1001 &742141063
@@ -33796,17 +33829,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528378209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 894192258}
-  m_Father: {fileID: 2079289569}
+  m_Father: {fileID: 513731518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540, y: 356.62952}
+  m_AnchoredPosition: {x: -319, y: 749.6295}
   m_SizeDelta: {x: 375, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528378211
@@ -34880,6 +34913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteMao: {fileID: 741419861}
+  spriteGlove: {fileID: 128685768}
   spriteAspirador: {fileID: 1651831730}
 --- !u!114 &1553860164
 MonoBehaviour:
@@ -34894,11 +34928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspiradorHand: 0
-  moeda: 10
+  moeda: 30
   score: 0
   lixoColetado: 0
   glove: 0
-  mao: 1
   hand: {fileID: 741419861}
   lixoText: {fileID: 75675973}
   moedaText: {fileID: 894192259}
@@ -36680,6 +36713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651831731}
   - component: {fileID: 1651831732}
+  - component: {fileID: 1651831733}
   m_Layer: 0
   m_Name: Aspirador
   m_TagString: OutroSprite
@@ -36756,6 +36790,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1651831733
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651831730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7c370020b3ddcb458b823af7893a8eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1655171667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 409460, guid: 83e00ee61e401534699048e56c0a1bc9, type: 3}
@@ -44564,9 +44620,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 513731518}
   - {fileID: 1618837677}
-  - {fileID: 668223800}
-  - {fileID: 1528378210}
   - {fileID: 1129610878}
   - {fileID: 957091635}
   m_Father: {fileID: 0}

@@ -7,6 +7,7 @@ TagManager:
   - OutroSprite
   - Spawn
   - Lixo
+  - Mao
   layers:
   - Default
   - TransparentFX

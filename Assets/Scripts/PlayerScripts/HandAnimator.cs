@@ -6,8 +6,6 @@ public class HandAnimator : MonoBehaviour
 {
    
     public Animator animator;
-    public string maos1;
-    public string maos2;
     public GameObject glove;
     public static bool grabOn = false;
      public Collider AreaDetectao;
@@ -52,12 +50,16 @@ public class HandAnimator : MonoBehaviour
     }
     public void DisableHand()
     {
-      GameManager.gameManager.mao = false;
+      GameObject hand = GameObject.FindWithTag("Mao").gameObject;
+      hand.transform.Translate(0, -10, 0);
+      hand.SetActive(false);
     }
     public void EnabledHand()
     {
         Debug.Log("MaoLuva");
         glove.SetActive(true);
+        DisableHand();
     }
+  
 
 }
