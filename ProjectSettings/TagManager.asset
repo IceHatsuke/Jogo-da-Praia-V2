@@ -8,6 +8,7 @@ TagManager:
   - Spawn
   - Lixo
   - Mao
+  - Inimigo
   layers:
   - Default
   - TransparentFX
