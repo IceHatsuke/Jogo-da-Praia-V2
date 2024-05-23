@@ -36,8 +36,6 @@ public class EnemyController : MonoBehaviour
     public void PegaAlvo()
     {
         GameObject Alvo = GameObject.FindWithTag("Player");
-
-
     }
 
 }

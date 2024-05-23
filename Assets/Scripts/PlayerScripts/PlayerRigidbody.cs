@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerRigidbody : MonoBehaviour
 {
+    public bool mobile = false;
     public float velocidade = 5f;
     float velocidadePadrao;
     public static bool podeMover = true;
