@@ -13,6 +13,8 @@ public class PlayerRigidbody : MonoBehaviour
     private Rigidbody rb;
     private InputManager input;
     Vector3 movimento;
+
+    public VariableJoystick variableJoystick; //variavel joystick
    
     void Start()
     {
@@ -31,7 +33,7 @@ public class PlayerRigidbody : MonoBehaviour
     }
     void MovePlayer()
     {
-        movimento = new Vector3(input.Horizontal, 0f, input.Vertical) * velocidade * Time.deltaTime;   
+        movimento = new Vector3(variableJoystick.Horizontal, 0f, variableJoystick.Vertical) * velocidade * Time.deltaTime;   
         rb.MovePosition(rb.position + transform.TransformDirection(movimento));   
     }
     
