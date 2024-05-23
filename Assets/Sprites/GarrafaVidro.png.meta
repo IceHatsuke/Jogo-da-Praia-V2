@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc6a03094fe78c64e9db29c861ee5a8f
+guid: 4f1cb6e5920fb80469f787673247c8ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,17 +43,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 320, y: 500, z: 350, w: 50}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -134,154 +134,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: MonstroLixo_0
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 564
-        width: 270
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b262259d36ab59e4baaebc2424f494a2
-      internalID: -2064708535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MonstroLixo_1
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 564
-        width: 270
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbe43d8d2939ddc459bee119a597630a
-      internalID: -1104128330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MonstroLixo_2
-      rect:
-        serializedVersion: 2
-        x: 566
-        y: 564
-        width: 284
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc9ab34d43596e34c8c60594cf3027a9
-      internalID: 1165973355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MonstroLixo_3
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 164
-        width: 270
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 895b125c79bf26e4a90601f2227aa1b1
-      internalID: 146072967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MonstroLixo_4
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 164
-        width: 270
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4359c5abf925a3f4bb93272913987cd6
-      internalID: -715851835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MonstroLixo_5
-      rect:
-        serializedVersion: 2
-        x: 580
-        y: 164
-        width: 270
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b415f101dc4889248aa4a4b0b666e44e
-      internalID: -1808532511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline:
-    - - {x: -393.5, y: 55}
-      - {x: -125.5, y: 55}
-      - {x: -125.5, y: 380}
-      - {x: -393.5, y: 380}
+    sprites: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      MonstroLixo_0: -2064708535
-      MonstroLixo_1: -1104128330
-      MonstroLixo_2: 1165973355
-      MonstroLixo_3: 146072967
-      MonstroLixo_4: -715851835
-      MonstroLixo_5: -1808532511
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
