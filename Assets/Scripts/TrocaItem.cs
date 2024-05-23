@@ -4,99 +4,72 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class TrocaItem : MonoBehaviour
+public class TrocaItem : MonoBehaviour, IPointerClickHandler
 {
     
+    public static int equipado = 0;
+    public static bool possuiLuva = false;
+
     public GameObject aspiradorIcone;
     public GameObject maoIcone;
+    public GameObject luvaIcone;
 
-    public GameObject spriteMao;
-    public GameObject spriteGlove;
+    public GameObject aspiradorEquip;
+    public GameObject maoEquip;
+    public GameObject luvaEquip;
 
-    public GameObject spriteAspirador;
-
-    public GameObject spriteNormal;
-    public GameObject spriteTroca;
-    
-    private bool spriteTrocado = false;
-    private bool primeiroAtivo = true;
-    
-
-    private SpriteRenderer spriteRenderer;
-
-    public Button botaoTrocar;
-
-    void Start()
+    void Trocar()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
-        //spriteRenderer.sprite = spriteNormal;
-        botaoTrocar.onClick.AddListener(OnClick);
-    }
 
-    void Update()
-    {
-        if(UnityEngine.Input.GetMouseButtonDown(1) && GameManager.gameManager.aspiradorHand == true)
-        {
+        Desligar_Itens();
             
-            spriteTrocado = !spriteTrocado;
-
-        if(GameManager.gameManager.glove == true )
-        {
-            spriteGlove.SetActive(!spriteTrocado);
-        }
-        
-        }
-
-        spriteMao.SetActive(!spriteTrocado);
-          
-       
-        spriteAspirador.SetActive(spriteTrocado);
-        
-    }
-
-    void OnClick()
-    {
-        if (UnityEngine.Input.GetMouseButtonDown(1))
-        {
-            if (spriteTrocado)
+            if (equipado == 0)
             {
-                spriteRenderer.sprite = spriteNormal;
-                spriteTrocado = false;
+                equipado = 1;
+                maoIcone.SetActive(false);
+                luvaIcone.SetActive(false);
+                aspiradorIcone.SetActive(true);
+                
+                
+                aspiradorEquip.SetActive(true);
             }
             else
             {
-                spriteRenderer.sprite = spriteTroca;
-                spriteTrocado = true;
+                equipado = 0;
+                aspiradorIcone.SetActive(false);
+                
+                if(possuiLuva)
+                {
+                    luvaIcone.SetActive(true);
+                    luvaEquip.SetActive(true);
+                }
+                else
+                {
+                    maoIcone.SetActive(true);
+                    maoEquip.SetActive(true);
+                }
 
             }
 
-            if (spriteTrocado)
-            {
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                GameObject.FindGameObjectWithTag("OutroSprite").GetComponent<SpriteRenderer>().enabled = false;
-            }
-            else
-            {
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                GameObject.FindGameObjectWithTag("OutroSprite").GetComponent<SpriteRenderer>().enabled = true;
-            }
-        }
     }
-    public void TrocarObjetos()
+
+    void Desligar_Itens()
     {
-        primeiroAtivo = !primeiroAtivo; // Inverte o estado atual
-
-        // Troca o primeiro par de objetos
-        maoIcone.SetActive(primeiroAtivo);
-        spriteNormal.SetActive(primeiroAtivo);
-        
-        if(GameManager.gameManager.aspiradorHand == true)
-        {
-        aspiradorIcone.SetActive(!primeiroAtivo);
-        aspirador.SetActive(!primeiroAtivo);
-        }
-        // Troca o segundo par de objetos
-       
+        maoEquip.SetActive(false);
+        luvaEquip.SetActive(false);
+        aspiradorEquip.SetActive(false);
     }
+
+    void Ligar_Item(string nome)
+    {
+        Camera.main.transform.Find(nome).gameObject.SetActive(false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Trocar();
+    }
+
 }
