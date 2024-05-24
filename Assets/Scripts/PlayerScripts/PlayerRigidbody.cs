@@ -15,26 +15,42 @@ public class PlayerRigidbody : MonoBehaviour
     private InputManager input;
     Vector3 movimento;
 
+    public GameObject joystickUI;
     public VariableJoystick variableJoystick; //variavel joystick
    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         input = GetComponent<InputManager>();
+        
+        joystickUI.SetActive(mobile);
     }
 
     void Update()
     {
+        joystickUI.SetActive(mobile);
+
+
        if(podeMover == false)
        {
             return;
        }
-    
+       
         MovePlayer();
     }
     void MovePlayer()
     {
-        movimento = new Vector3(variableJoystick.Horizontal, 0f, variableJoystick.Vertical) * velocidade * Time.deltaTime;   
+        if(mobile)
+        {
+            movimento = new Vector3(variableJoystick.Horizontal, 0f, variableJoystick.Vertical) * velocidade * Time.deltaTime;   
+        }
+        else
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            movimento = new Vector3(moveHorizontal, 0f, moveVertical) * velocidade * Time.deltaTime;
+        }
+
         rb.MovePosition(rb.position + transform.TransformDirection(movimento));   
     }
     
