@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerRigidbody : MonoBehaviour
 {
-    public bool mobile = false;
+    
     public float velocidade = 5f;
     float velocidadePadrao;
     public static bool podeMover = true;
@@ -15,7 +15,7 @@ public class PlayerRigidbody : MonoBehaviour
     private InputManager input;
     Vector3 movimento;
 
-    public GameObject joystickUI;
+    //public GameObject joystickUI;
     public VariableJoystick variableJoystick; //variavel joystick
    
     void Start()
@@ -23,12 +23,12 @@ public class PlayerRigidbody : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         input = GetComponent<InputManager>();
         
-        joystickUI.SetActive(mobile);
+        //joystickUI.SetActive(GameManager.gameManager.mobile);
     }
 
     void Update()
     {
-        joystickUI.SetActive(mobile);
+        //joystickUI.SetActive(GameManager.gameManager.mobile);
 
 
        if(podeMover == false)
@@ -40,7 +40,7 @@ public class PlayerRigidbody : MonoBehaviour
     }
     void MovePlayer()
     {
-        if(mobile)
+        if(GameManager.gameManager.mobile)
         {
             movimento = new Vector3(variableJoystick.Horizontal, 0f, variableJoystick.Vertical) * velocidade * Time.deltaTime;   
         }

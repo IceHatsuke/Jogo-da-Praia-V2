@@ -7,6 +7,9 @@ using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
+
+  public bool mobile = false;
+
   public static GameManager gameManager;
   public bool aspiradorHand;
   public int moeda = 0;
