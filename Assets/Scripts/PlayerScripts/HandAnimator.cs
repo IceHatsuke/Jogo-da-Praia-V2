@@ -31,11 +31,7 @@ public class HandAnimator : MonoBehaviour
             animator.SetBool("grabOn", false);
 
         }
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            animator.SetBool("glove", GameManager.gameManager.glove);
-
-        }
+        
 
         
 
@@ -54,12 +50,13 @@ public class HandAnimator : MonoBehaviour
       hand.transform.Translate(0, -10, 0);
       hand.SetActive(false);
     }
-    public void EnabledHand()
+    public  void EnabledHand()
     {
         Debug.Log("MaoLuva");
         glove.SetActive(true);
         DisableHand();
     }
   
+
 
 }
