@@ -33,7 +33,7 @@ public class TrocaItem : MonoBehaviour, IPointerClickHandler
                 aspiradorIcone.SetActive(true);
                 
                 
-                aspiradorEquip.SetActive(true);
+                aspiradorEquip.SetActive(false);
             }
             else
             {

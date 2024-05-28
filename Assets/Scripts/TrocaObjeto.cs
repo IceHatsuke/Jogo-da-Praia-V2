@@ -22,7 +22,7 @@ public class TrocaObjeto : MonoBehaviour
         // Troca o primeiro par de objetos
         maoIcone.SetActive(primeiroAtivo);
         mao.SetActive(primeiroAtivo);
-    Debug.Log("sdfsfd");
+        Debug.Log("sdfsfd");
         
 
         // Troca o segundo par de objetos

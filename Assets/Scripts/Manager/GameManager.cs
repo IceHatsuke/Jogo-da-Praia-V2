@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
   public static GameManager gameManager;
   public bool aspiradorHand;
+  public bool armadilha;
   public int moeda = 0;
   public int score = 0;
   public int lixoColetado = 0;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
   void Start()
   {
     aspiradorHand = false;
+    armadilha = false;
   }
   void Update()
   {

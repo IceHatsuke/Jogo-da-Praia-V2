@@ -6,6 +6,8 @@ using UnityEngine;
 public class TrocaItensNPC : MonoBehaviour
 {
 
+    
+
     public void TrocaLixoPor1Moeda()
     {
 
@@ -24,13 +26,21 @@ public class TrocaItensNPC : MonoBehaviour
             GameManager.gameManager.aspiradorHand = true;
         }
     }
-    public void Trocar10MoedasPorLuva()
+    public void Trocar20MoedasPorLuva()
     {
         if(GameManager.gameManager.moeda >= 10)
         {
-             GameManager.gameManager.moeda -= 10;
+            GameManager.gameManager.moeda -= 10;
             GameManager.gameManager.glove = true;
         }
     }
 
+    public void Trocar20MoedasPorArmadilha()
+    {
+        if(GameManager.gameManager.moeda >= 20)
+        {
+            GameManager.gameManager.moeda -= 20;
+            GameManager.gameManager.armadilha = true;
+        }
+    }
 }
