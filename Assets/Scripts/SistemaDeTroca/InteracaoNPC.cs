@@ -6,6 +6,9 @@ public class InteracaoNPC : MonoBehaviour
 {
     public GameObject canvasTroca;
     public GameObject player;
+    public GameObject glove;
+
+    public Animator animator;
 
 
     private void Start()
@@ -44,6 +47,7 @@ public class InteracaoNPC : MonoBehaviour
             if (canvasTroca != null)
             {
                 canvasTroca.SetActive(false);
+                animator.SetBool("glove", GameManager.gameManager.glove);
             }
         }
     }
