@@ -16265,9 +16265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ae43021164359469204941dc7f3e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   playerAlvo: {fileID: 638816310}
   cc: {fileID: 601970310}
   velocidade: 5
+  fixedPosition: 0
 --- !u!143 &601970310
 CharacterController:
   m_ObjectHideFlags: 0
@@ -37654,9 +37656,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasTroca: {fileID: 1129610877}
-  player: {fileID: 0}
-  glove: {fileID: 0}
-  animator: {fileID: 0}
+  player: {fileID: 638816310}
+  glove: {fileID: 128685768}
+  animator: {fileID: 741419863}
 --- !u!65 &1315936052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42033,13 +42035,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1315936047}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1315936053}
+        m_TargetAssemblyTypeName: TrocaItensNPC, Assembly-CSharp
+        m_MethodName: Trocar20MoedasPorArmadilha
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -48611,7 +48613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca7c783256c784d80391fa65146353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTransform: {fileID: 601970307}
 --- !u!1 &1702318740
 GameObject:
   m_ObjectHideFlags: 0

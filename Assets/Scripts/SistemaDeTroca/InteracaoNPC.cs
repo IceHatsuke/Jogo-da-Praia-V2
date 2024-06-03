@@ -7,7 +7,7 @@ public class InteracaoNPC : MonoBehaviour
     public GameObject canvasTroca;
     public GameObject player;
     public GameObject glove;
-
+    
     public Animator animator;
 
 

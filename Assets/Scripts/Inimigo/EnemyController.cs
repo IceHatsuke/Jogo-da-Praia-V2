@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
+    public Animator animator;
     public GameObject playerAlvo;
 
     public CharacterController cc;
 
-    public float velocidade = 5f;
+    public float velocidade = 3f;
+    public float fixedPosition = 0;
 
     
     //public int vidaAtras;
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         //vidaFrente = vidaAtras;
 
@@ -42,8 +44,13 @@ public class EnemyController : MonoBehaviour
         }
 
         Vector3 mover = (playerAlvo.transform.position - transform.position).normalized;
+        mover.y = 0;
         mover *= Time.deltaTime * velocidade;
         cc.Move(mover);
+
+         Vector3 fixedYPosition = transform.position;
+        fixedYPosition.y = fixedPosition;
+        transform.position = fixedYPosition;
 
     }
 
