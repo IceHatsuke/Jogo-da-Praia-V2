@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DropObject : MonoBehaviour
 {
@@ -9,7 +11,18 @@ public class DropObject : MonoBehaviour
     // Defina a rotação desejada para o objeto droppado
     public Vector3 dropRotation;
     // Variável para definir para quem a armadilha vai "olhar"
-    public GameObject trapAlvo;
+    public GameObject personagem;
+    //
+    public Button trapButton;
+
+    void Start()
+    {
+         // Verifique se o botão e o personagem estão configurados
+        if (trapButton != null)
+        {
+            trapButton.onClick.AddListener(AcaoPersonagem);
+        }
+    }
 
     void Update()
     {
@@ -19,8 +32,10 @@ public class DropObject : MonoBehaviour
             Drop();
         }
 
+        //if ()
+
         Armadilha();
-        if(trapAlvo == null)
+        if(personagem == null)
         {
             return;
         }
@@ -28,11 +43,34 @@ public class DropObject : MonoBehaviour
 
     void Drop()
     {
-        // Converte a rotação em Euler (Vector3) para Quaternion
-        Quaternion rotation = Quaternion.Euler(dropRotation);
+       
 
         // Instancia o objeto na posição do personagem com a rotação especificada
-        Instantiate(objectToDrop, transform.position, rotation);
+        Transform armadilha = Instantiate(objectToDrop, GameObject.FindWithTag("Player").transform).transform;
+        Vector3 posicao = GameObject.FindWithTag("Player").transform.position;
+
+        posicao.y += 2;
+        posicao.z += 1;
+
+
+        armadilha.position = posicao;
+
+        Debug.Log("???");
+    }
+
+    void AcaoPersonagem()
+    {
+        // Chame a ação do personagem
+        PerformCharacterAction();
+    }
+
+    void PerformCharacterAction()
+    {
+        // Exemplo de ação: mover o personagem para frente
+        personagem.transform.Translate(Vector3.forward * 1.0f);
+        
+        // Aqui você pode adicionar a lógica específica da ação que o personagem deve realizar
+        Debug.Log("Ação do personagem executada!");
     }
 
     public void Armadilha()
@@ -40,3 +78,5 @@ public class DropObject : MonoBehaviour
         GameObject Alvo = GameObject.FindWithTag("Player");
     }
 }
+
+
