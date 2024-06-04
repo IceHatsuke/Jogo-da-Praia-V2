@@ -60,6 +60,14 @@ public class EnemyController : MonoBehaviour
         GameObject Alvo = GameObject.FindWithTag("Player");
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerRigidbody>().ReceberDano();
+        }
+    }
+
     //void atualizarHUD()
     
         // Calcular quanto deve ser reduzido de vida

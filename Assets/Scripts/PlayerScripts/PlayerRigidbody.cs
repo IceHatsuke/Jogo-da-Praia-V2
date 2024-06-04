@@ -12,6 +12,8 @@ public class PlayerRigidbody : MonoBehaviour
     float velocidadePadrao;
     public static bool podeMover = true;
     private Rigidbody rb;
+    private GameObject gameOver;
+    public int vida = 2;
     private InputManager input;
     Vector3 movimento;
 
@@ -54,5 +56,17 @@ public class PlayerRigidbody : MonoBehaviour
         rb.MovePosition(rb.position + transform.TransformDirection(movimento));   
     }
     
+    public void ReceberDano()
+    {
+        vida--;
+        GameObject.Find("====HudInGame====").transform.Find("Vida").Find("VidaText").GetComponent<TextMeshProUGUI>().text = "Vida:" + vida;
+
+        if(vida <= 0) // Verifica se a vida é menor ou igual a 0
+    {
+        GameObject.Find("====HudInGame====").transform.Find("GameOver").gameObject.SetActive(true); // Ativa o canvas de Game Over
+        Destroy(gameObject); // Destroi o objeto do jogador
+    }
+    }
+
 }
     

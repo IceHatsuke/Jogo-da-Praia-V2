@@ -9,6 +9,7 @@ TagManager:
   - Lixo
   - Mao
   - Inimigo
+  - Vida
   layers:
   - Default
   - TransparentFX
