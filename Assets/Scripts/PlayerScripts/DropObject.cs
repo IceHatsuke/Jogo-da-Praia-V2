@@ -46,14 +46,15 @@ public class DropObject : MonoBehaviour
        
 
         // Instancia o objeto na posição do personagem com a rotação especificada
-        Transform armadilha = Instantiate(objectToDrop, GameObject.FindWithTag("Player").transform).transform;
+        //Transform armadilha = Instantiate(objectToDrop, GameObject.FindWithTag("Player").transform).transform;
         Vector3 posicao = GameObject.FindWithTag("Player").transform.position;
 
-        posicao.y += 2;
+        posicao.y += 3;
         posicao.z += 1;
 
 
-        armadilha.position = posicao;
+        //armadilha.position = posicao;
+        GameObject armadilha = Instantiate(objectToDrop, posicao, Quaternion.Euler(dropRotation));
 
         Debug.Log("???");
     }
