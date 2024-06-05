@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -9,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
 
   public bool mobile = false;
-
+  public GameObject monstroLixo;
   public static GameManager gameManager;
   public bool aspiradorHand;
   public bool armadilha;
@@ -33,7 +35,12 @@ public class GameManager : MonoBehaviour
   {
     lixoText.text = lixoColetado.ToString();
     moedaText.text = moeda.ToString();
-   
+    
+    // verificar possivel bug, matar monstro com quinze lixos
+    if(lixoColetado == 15)
+    {
+     monstroLixo.SetActive(true);
+    }
    
   }
   public void DisableHand()

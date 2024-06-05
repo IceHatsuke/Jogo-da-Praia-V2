@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        
 
         //vidaFrente = vidaAtras;
 
@@ -57,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
     public void PegaAlvo()
     {
-        GameObject Alvo = GameObject.FindWithTag("Player");
+        playerAlvo = GameObject.FindWithTag("Player").gameObject;
     }
 
     void OnTriggerEnter(Collider other)
@@ -66,6 +67,8 @@ public class EnemyController : MonoBehaviour
         {
             other.GetComponent<PlayerRigidbody>().ReceberDano();
         }
+
+        
     }
 
     //void atualizarHUD()
