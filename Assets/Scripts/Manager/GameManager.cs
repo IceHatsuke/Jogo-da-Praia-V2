@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     // verificar possivel bug, matar monstro com quinze lixos
     if(lixoColetado == 15)
     {
-     monstroLixo.SetActive(true);
+      monstroLixo.SetActive(true);
     }
    
   }
