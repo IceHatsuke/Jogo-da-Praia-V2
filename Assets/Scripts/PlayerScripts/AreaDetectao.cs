@@ -10,6 +10,8 @@ public class AreaDetectao : MonoBehaviour
         {
             collider.GetComponent<ObjectsStatus>().DestroyObject();
             GameManager.gameManager.lixoColetado++;
+            GameObject.Find("===SystemGeneral===").transform.Find("Spawner").gameObject.GetComponent<SpawnColetavel>().LimiteSpawn();
+
         }
-   }
+    }
 }

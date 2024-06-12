@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnColetavel : MonoBehaviour
 {
     public List<Transform> prefabsColetaveis;
-
+    //GameObject[] lixos;
     public Transform prefabColetavel;
     public Transform spawnColetavel;
     public float spawnInterval = 5f;
@@ -14,11 +14,20 @@ public class SpawnColetavel : MonoBehaviour
 
     void Start()
     {
-        // Chame a função SpawnarLixo repetidamente com o intervalo especificado
-        InvokeRepeating("SpawnarLixo", 0f, spawnInterval);
+        LimiteSpawn();
     }
 
-    public void SpawnarLixo() 
+    public void LimiteSpawn()
+    {
+        GameObject[] lixos = GameObject.FindGameObjectsWithTag("Lixo");
+        if (lixos.Length > 500)
+        {
+            return;
+        }
+        StartCoroutine(SpawnarLixo());
+    }
+
+    IEnumerator SpawnarLixo() 
     {
         float areaX = spawnColetavel.localScale.x / 2;
         float areaZ = spawnColetavel.localScale.z / 2;
@@ -40,9 +49,11 @@ public class SpawnColetavel : MonoBehaviour
         Instantiate(prefabColetavel, spawnColetavel.position + localSpawn, Quaternion.identity);
 
             }
-            
-        }
 
-        
+        }
+        yield return new WaitForSeconds(3f);
+        LimiteSpawn();
+        Debug.Log("Spawnou");
+
     }
 }

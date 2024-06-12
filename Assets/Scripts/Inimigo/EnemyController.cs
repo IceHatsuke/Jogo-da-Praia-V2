@@ -12,13 +12,7 @@ public class EnemyController : MonoBehaviour
     public float velocidade = 3f;
     public float fixedPosition = 0;
 
-    
-    //public int vidaAtras;
-    //public int vidaFrente;
-
-    //RectTransform barraVidaAtras;
-    //RectTransform barraVidaFrente;
-    //Transform canvas;
+    private bool emEspera = false;
     
 
     // Start is called before the first frame update
@@ -27,19 +21,13 @@ public class EnemyController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         
-
-        //vidaFrente = vidaAtras;
-
-        //barraVidaFrente = transform.Find("MonstroLixo").transform.Find("VidaInimigo").transform.Find("BarraVidaFrente").GetComponent<RectTransform>();
-        //barraVidaAtras = transform.Find("MonstroLixo").transform.Find("VidaInimigo").transform.Find("BarraVidaAtras").GetComponent<RectTransform>();
-        //canvas = transform.Find("MonstroLixo").transform.Find("VidaInimigo");
     }
 
     // Update is called once per frame
     void Update()
     {
         PegaAlvo();
-        if(playerAlvo == null)
+        if(playerAlvo == null || emEspera)
         {
             return;
         }
@@ -49,7 +37,9 @@ public class EnemyController : MonoBehaviour
         mover *= Time.deltaTime * velocidade;
         cc.Move(mover);
 
-         Vector3 fixedYPosition = transform.position;
+        transform.rotation = Quaternion.LookRotation(mover);
+
+        Vector3 fixedYPosition = transform.position;
         fixedYPosition.y = fixedPosition;
         transform.position = fixedYPosition;
 
@@ -66,25 +56,48 @@ public class EnemyController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerRigidbody>().ReceberDano();
-        }
 
+            StartCoroutine(EmEspera());
+
+        }    
         
+        if (other.CompareTag("Trap"))
+        {
+            Destroy(other.gameObject); 
+
+            StartCoroutine(EmEsperaTrap());
+        }
+    }
+
+    IEnumerator EmEspera()
+    {
+        emEspera = true;
+        yield return new WaitForSeconds(1f);
+        emEspera = false;
+
+    }
+
+    IEnumerator EmEsperaTrap()
+    {
+        emEspera = true;
+        yield return new WaitForSeconds(5f);
+        emEspera = false;
     }
 
     //void atualizarHUD()
-    
-        // Calcular quanto deve ser reduzido de vida
-        //float reducao = (float)vidaAtras / (float)vidaFrente;
-        //reducao = reducao * 100;
-        // Diminuir a barra de vida
-        //barraVidaFrente.sizeDelta = new Vector2(reducao, barraVidaFrente.sizeDelta.y );
-        // Realocar a posicao X da barra de vida para a esquerda
-        //float posicao = (barraVidaAtras.sizeDelta.x - barraVidaAtras.sizeDelta.x) / 2;
-        //barraVidaAtras.anchoredPosition = new Vector2( posicao , barraVidaAtras.anchoredPosition.y );
-    
 
-    
+    // Calcular quanto deve ser reduzido de vida
+    //float reducao = (float)vidaAtras / (float)vidaFrente;
+    //reducao = reducao * 100;
+    // Diminuir a barra de vida
+    //barraVidaFrente.sizeDelta = new Vector2(reducao, barraVidaFrente.sizeDelta.y );
+    // Realocar a posicao X da barra de vida para a esquerda
+    //float posicao = (barraVidaAtras.sizeDelta.x - barraVidaAtras.sizeDelta.x) / 2;
+    //barraVidaAtras.anchoredPosition = new Vector2( posicao , barraVidaAtras.anchoredPosition.y );
 
-    
+
+
+
+
 
 }

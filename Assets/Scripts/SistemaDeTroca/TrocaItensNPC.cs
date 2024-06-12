@@ -37,10 +37,14 @@ public class TrocaItensNPC : MonoBehaviour
 
     public void Trocar20MoedasPorArmadilha()
     {
-        if(GameManager.gameManager.moeda >= 20)
+        if(GameManager.gameManager.moeda >= 10)
         {
-            GameManager.gameManager.moeda -= 20;
+            GameManager.gameManager.moeda -= 10;
             GameManager.gameManager.armadilha = true;
+
+            GameObject.Find("====HudInGame====").transform.Find("Drop Trap").gameObject.SetActive(true);
+            DropObject.numTrap = 5;
+
         }
     }
 }

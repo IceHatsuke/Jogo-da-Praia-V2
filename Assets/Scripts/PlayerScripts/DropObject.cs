@@ -14,9 +14,11 @@ public class DropObject : MonoBehaviour
     public GameObject personagem;
     //
     public Button trapButton;
+    public static int numTrap = 0;
 
     void Start()
     {
+
          // Verifique se o botão e o personagem estão configurados
         if (trapButton != null)
         {
@@ -27,9 +29,10 @@ public class DropObject : MonoBehaviour
     void Update()
     {
         // Verifica se a tecla F foi pressionada
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && numTrap >= 0)
         {
             Drop();
+            numTrap--;
         }
 
         //if ()

@@ -8,7 +8,7 @@ public class HandAnimator : MonoBehaviour
     public Animator animator;
     public GameObject glove;
     public static bool grabOn = false;
-     public Collider AreaDetectao;
+    public Collider AreaDetectao;
 
 
     void Start()
@@ -30,10 +30,8 @@ public class HandAnimator : MonoBehaviour
 
             animator.SetBool("grabOn", false);
 
-        }
-        
-
-        
+        }    
+               
 
     }
     public void EnableCollider()

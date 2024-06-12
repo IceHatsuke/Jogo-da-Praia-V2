@@ -31,9 +31,7 @@ public class TrocaItem : MonoBehaviour, IPointerClickHandler
                 maoIcone.SetActive(false);
                 luvaIcone.SetActive(false);
                 aspiradorIcone.SetActive(true);
-                
-                
-                aspiradorEquip.SetActive(false);
+                aspiradorEquip.SetActive(true);
             }
             else
             {
@@ -44,6 +42,7 @@ public class TrocaItem : MonoBehaviour, IPointerClickHandler
                 {
                     luvaIcone.SetActive(true);
                     luvaEquip.SetActive(true);
+                    
                 }
                 else
                 {
